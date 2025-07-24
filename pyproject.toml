@@ -1,0 +1,51 @@
+[project]
+name = "advanced-programming-course"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.0",
+    "ruff>=0.12.4",
+]
+
+[tool.ruff]
+fix = true
+unsafe-fixes = false
+
+[tool.ruff.lint]
+select = [
+    "F",  # default Ruff rules
+    "E",  # pycodestyle Errors
+    "W",  # pycodestyle Warnings
+    "I",  # import sorting
+    "UP", # modern syntax updates
+    "B",  # flake8 common pitfalls & best practices
+    "Q",  # flake8 consistent quotes
+    "D4", # docstring section formatting
+    "N",  # naming conventions,
+]
+
+ignore = [
+    "B008",  # Do not perform func call in arg defaults (to be activated in separate PR)
+    "D413",  # Blank line after Return in doc string
+    "E501",  # Limit line length
+    "UP046", # Type Aliases
+    "W293",  # Do not use trailing whitespace
+    "W291",  # Do not use trailing whitespace
+]
+
+fixable = ["ALL"]
+
+extend-select = [
+    "PLR2004", # Prevent magic values (hardcoded numbers/strings)
+    "D101",    # class docstrings required
+    "D102",    # Missing docstring in public method
+    "D103",    # Missing docstring in public function
+    "D201",    # No blank lines before docstring
+    "D202",    # No blank lines after docstring
+    "D215",    # Section headers end with ":"
+]
